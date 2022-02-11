@@ -5,5 +5,5 @@ Data analysis code developed during my Ph.D. on the BaBar experiment (Stanford L
 ```source comp_HistoMaker```
 
 # To execute:
-```HistoMakerUser/main.cpp```
+```HistoMakerUser/main.cpp < options >```
 
