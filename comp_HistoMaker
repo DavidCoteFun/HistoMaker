@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#note: -I$(pwd)/  is needed to use the syntax #include "dir/class.h"
+#It adds to the -I option the output of the unix command 'pwd' with a '/' at the end
+
+MyExecutable=HistoTool
+CLHEPDir=/afs/desy.de/group/atlas/software/13.0.20/sw/lcg/external/clhep/1.9.2.3/slc3_ia32_gcc323
+g++ HistoMakerUser/main.cpp RooTupleHistoMaker/*.cc HistoMakerUser/*.cc -ggdb -O -o $MyExecutable -I$(pwd)/ -I$CLHEPDir/include/ -L$CLHEPDir/lib/ -lCLHEP-Random-1.9.2.3 $(root-config --cflags) $(root-config --glibs)
+
+MyPkg=RooTupleHistoMaker
+#g++ $MyPkg/main.cpp $MyPkg/Ntuple.cc $MyPkg/Dataset.cc $MyPkg/Histo.cc $MyPkg/DBcutV1.cc $MyPkg/DBweightV1.cc $MyPkg/DBdatasetV6.cc $MyPkg/DatXtraReducedPilnu.cc $MyPkg/MultiCutBasic.cc $MyPkg/MultiCut.cc $MyPkg/Cut.cc $MyPkg/Operation.cc $MyPkg/DummyCut.cc $MyPkg/NoWeight.cc $MyPkg/Weight.cc $MyPkg/DBdrawableV8.cc $MyPkg/UnsetDrawable.cc $MyPkg/Drawable.cc $MyPkg/YHisto1D.cc $MyPkg/Histo1D.cc -ggdb -O -o $MyExecutable -I$(pwd)/ -I$CLHEPDir/include/ -L$CLHEPDir/lib/ -lCLHEP-Random-1.9.2.3 $(root-config --cflags) $(root-config --glibs)
+
+$MyExecutable DatXtraReducedPilnu MyMethod MultiCutBasic NoWeight MyOutputFile 101
+
+
