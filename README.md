@@ -1,5 +1,5 @@
 # HistoMaker
-Data analysis code developed during my Ph.D. on the BaBar experiment (Stanford Linear Accelerator Center). These were the good old days!  :-)
+Data analysis package developed during my Ph.D. to analyze particle collisions produced by the Stanford Linear Accelerator.
 
 # To compile
 ```source comp_HistoMaker```
